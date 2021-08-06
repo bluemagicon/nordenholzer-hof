@@ -1,0 +1,162 @@
+body{
+  max-width: 1920px;
+  width: 90% !important;
+  margin: 0 auto;
+  border-left: 1px solid #C8BBAE;
+  border-right: 1px solid #C8BBAE;
+}
+
+
+/*** HEADLINE ***/
+.is-style-h1-longwrap{
+  white-space: nowrap;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.is-style-subheadline{
+  font-family: 'Work Sans';
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+h5{
+  font-family: 'Beyond The Mountains';
+}
+
+/*** SLIDER GRID ***/
+.slider-with-grid .ghostkit-col{
+  .ghostkit-col-content {
+    height: 100%;
+    .nk-awb{
+      height: 100%;
+    }
+  }
+}
+
+/*** SECION: Newsletter ***/
+.section-newsletter{
+  .wp-block-group__inner-container{
+    width: 100% !important;
+    position: relative;
+    padding-bottom: 50px;
+    .newsletter-content-wrapper{
+      background: $w-color-primary;
+      position: absolute;
+      margin: 0;
+      padding: 50px;
+      max-width: 700px !important;
+      bottom: 0;
+      left: 5%;
+    }
+  }
+}
+
+/*** CONNECTOR ***/
+.connector{
+  .post-inner{
+    box-shadow: none !important;
+    border-bottom: 1px solid $w-color-primary;
+    .post-image{
+      position: relative;
+      overflow: hidden;
+      img{
+        transform: none !important;
+      }
+      &::after{
+        content: '';
+        height: 95%;
+        width: 95%;
+        position: absolute;
+        border: 2px solid #fff;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        transition: all .4s;
+      }
+      &:hover{
+        &::after{
+          height: 101%;
+          width: 101%;
+        }
+      }
+    }
+    .post-content{
+      text-align: center;
+      margin-left: 0;
+      margin-right: 0;
+      .css-events-list{
+        display: none;
+      }
+      h3{
+        font-family: 'Work Sans';
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9em;
+        margin-bottom: 0;
+        color: $w-color-primary;
+      }
+      p{
+        font-size: 1.5em;
+        font-family: 'Bauer Bodoni Black';
+        margin: 0.8rem 0 1.2rem 0;
+      }
+    }
+  }
+}
+.connector-veranstaltungen{
+  .post-inner{
+    .post-content{
+      .css-events-list{
+        display: flex;
+        justify-content: center;
+        thead{
+          display: none;
+        }
+        tbody{
+          tr{
+            td{
+              &:last-child{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      p{
+        &:nth-child(2){
+          display: none;
+        }
+      }
+    }
+  }
+}
+.connector-news{
+  .post-inner{
+    .post-content{
+      p{
+        font-size: 1em;
+        font-family: 'Work Sans';
+      }
+      h3{
+        font-size: 1.5em;
+        font-family: 'Bauer Bodoni Black';
+        margin: 0.8rem 0 1.2rem 0;
+        color: $w-color-dark;
+        text-transform: none;
+        font-weight: normal;
+        letter-spacing: 0;
+      }
+      span{
+        font-family: 'Work Sans';
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9em;
+        margin-bottom: 0;
+        color: $w-color-primary;
+      }
+    }
+  }
+}
