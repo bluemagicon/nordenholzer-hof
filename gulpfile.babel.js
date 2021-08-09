@@ -21,7 +21,8 @@ const copyCustomFonts		= () => gulp.src(`src/fonts/${fontExt}`).pipe(gulp.dest('
 //const copyRemixIconFonts	= () => gulp.src(`node_modules/remixicon/fonts/${fontExt}`).pipe(gulp.dest('dist/fonts/icons'));
 //const copyRemixIconSVGs		= () => gulp.src(`node_modules/remixicon/fonts/${iconExt}`).pipe(gulp.dest('dist/fonts/icons'));
 const copyFontAwesomeSVGs		= () => gulp.src(`node_modules/@fortawesome/fontawesome-free/svgs/**/*.svg`).pipe(gulp.dest('dist/svg'));
-export const copy			= gulp.parallel(copyCustomFonts,copyFontAwesomeSVGs);
+const copyOwnSVGs			= () => gulp.src(`src/svg/*.svg`).pipe(gulp.dest('dist/svg/own'));
+export const copy			= gulp.parallel(copyCustomFonts,copyFontAwesomeSVGs,copyOwnSVGs);
 copy.description			= "Kopiere Dateien die nicht weiter bearbeitet werden aus dem src-Verzeichnis in das dist-Verzeichnis";
 
 

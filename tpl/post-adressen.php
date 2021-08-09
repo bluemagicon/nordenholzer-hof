@@ -16,7 +16,7 @@ include 'post/load-vars.php';
 ?>
 
 <article <?php post_class('post post--box'); ?> id="post-<?php the_ID(); ?>">
-	<div class="post-inner <?php if(get_field('status', get_the_ID()) == "Noch wenige Plätze frei"){echo 'fast-ausgebucht';}elseif(get_field('status', get_the_ID()) == "Bereits ausgebucht"){echo 'ausgebucht';} ?>">
+	<div class="post-inner">
 
 		<?php if(! $hide_images) { ?>
 			<?php include 'post/thumbnail.php'; ?>
@@ -29,12 +29,11 @@ include 'post/load-vars.php';
                 <span class="cat"><?php echo $cd->cat_name; ?></span>
             <?php }
             ?>
-			<?php include 'post/header.php'; ?>
-			<?php if(! $hide_descr) { ?>
-                <?php the_excerpt(); ?>
-			<?php } ?>
-			<!--<?php include 'post/footer.php'; ?>-->
-            <?php echo em_events(); ?>
+			<h3><?php the_title(); ?></h3>
+            <?php
+                $post_id = get_the_ID();
+                echo get_field('content', $post_id);
+            ?>
 		</span>
 
 	</div>

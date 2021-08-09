@@ -48,6 +48,11 @@ jQuery(document).ready(function () {
         }, 1);
     }
 
+    //SCROLL-TOP BTN
+    jQuery(".scroll-top-btn").click(function () {
+        jQuery("html, body").animate({scrollTop: 0}, 2000);
+    });
+
     // -----------------------------------------------
     // -----------------------------------------------
     // ANCHOR LINKS

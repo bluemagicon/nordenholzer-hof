@@ -28,11 +28,18 @@ $page_support	= $override_support ?: $global_support;
 // ----------------------------------------------------------------------
 ?>
 
+<!--
 <footer class="footer">
 	<div class="footer-inner">
 		<div class="uk-grid uk-grid-large uk-flex-between">
-
-
+            <?php if($page_footer['show_socialmedia'] && $global_social) { ?>
+                <div class="uk-width-auto">
+                    <div class="footer-item footer-social">
+                        <?php $social_profiles = $global_social;
+                        include 'tpl/partials/social.php'; ?>
+                    </div>
+                </div>
+            <?php } ?>
 			<?php if($page_footer['show_contact'] && $global_contact) { ?>
 				<div class="uk-width-1-2@m uk-width-auto@l">
 					<div class="footer-item footer-contact">
@@ -40,6 +47,7 @@ $page_support	= $override_support ?: $global_support;
 					</div>
 				</div>
 			<?php } ?>
+
 
 
 			<?php if($page_footer['footer_text']) { ?>
@@ -63,18 +71,45 @@ $page_support	= $override_support ?: $global_support;
 						<?php wp_nav_menu(array('theme_location' => 'footer', 'container' => false, 'fallback_cb' => false)); ?>
 					</div></div>
 				<?php } ?>
-				<?php if($page_footer['show_socialmedia'] && $global_social) { ?>
-					<div><div class="footer-item footer-social">
-						<?php $social_profiles = $global_social;
-						include 'tpl/partials/social.php'; ?>
-					</div></div>
-				<?php } ?>
 			</div>
 
 
 		</div>
 	</div>
 </footer>
+-->
+
+<footer id="footer">
+    <div class="alignwide">
+        <?php if($page_footer['show_socialmedia'] && $global_social) { ?>
+            <div class="footer-item footer-social">
+                <?php $social_profiles = $global_social;
+                include 'tpl/partials/social.php'; ?>
+            </div>
+        <?php } ?>
+        <div class="scroll-top-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="116" height="116" viewBox="0 0 116 116">
+                <g id="divider-icon" transform="translate(116 116) rotate(180)">
+                    <g id="Ellipse_3" data-name="Ellipse 3" fill="#fff" stroke="#c8bbae" stroke-width="1">
+                        <circle cx="58" cy="58" r="58" stroke="none"/>
+                        <circle cx="58" cy="58" r="57.5" fill="none"/>
+                    </g>
+                    <g id="Ellipse_4" data-name="Ellipse 4" transform="translate(4 4)" fill="#fff" stroke="#c8bbae" stroke-width="3">
+                        <circle cx="54" cy="54" r="54" stroke="none"/>
+                        <circle cx="54" cy="54" r="52.5" fill="none"/>
+                    </g>
+                    <path id="arrow-left" d="M10.035,15.111H47.889a.889.889,0,1,1,0,1.778H10.035l5.594,5.594a.889.889,0,1,1-1.257,1.257L7.26,16.629a.889.889,0,0,1,0-1.257L14.371,8.26a.889.889,0,1,1,1.257,1.257Z" transform="translate(42.27 83.912) rotate(-90)" fill="#c8bbae"/>
+                </g>
+            </svg>
+        </div>
+        <?php if(has_nav_menu('footer')) { ?>
+            <div class="footer-item footer-menu">
+                <?php wp_nav_menu(array('theme_location' => 'footer', 'container' => false, 'fallback_cb' => false)); ?>
+            </div>
+        <?php } ?>
+    </div>
+</footer>
+</div>
 
 <?php
 include 'tpl/partials/offcanvas.php';

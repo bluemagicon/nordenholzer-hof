@@ -163,6 +163,21 @@ function my_gkt_icons( $icons ) {
 </svg>
 ',
             ),
+            array(
+                'keys' => '',
+                'svg' => '<svg id="divider-icon" xmlns="http://www.w3.org/2000/svg" width="116" height="116" viewBox="0 0 116 116">
+  <g id="Ellipse_3" data-name="Ellipse 3" fill="#fff" stroke="#c8bbae" stroke-width="1">
+    <circle cx="58" cy="58" r="58" stroke="none"/>
+    <circle cx="58" cy="58" r="57.5" fill="none"/>
+  </g>
+  <g id="Ellipse_4" data-name="Ellipse 4" transform="translate(4 4)" fill="#fff" stroke="#c8bbae" stroke-width="3">
+    <circle cx="54" cy="54" r="54" stroke="none"/>
+    <circle cx="54" cy="54" r="52.5" fill="none"/>
+  </g>
+  <path id="arrow-left" d="M10.035,15.111H47.889a.889.889,0,1,1,0,1.778H10.035l5.594,5.594a.889.889,0,1,1-1.257,1.257L7.26,16.629a.889.889,0,0,1,0-1.257L14.371,8.26a.889.889,0,1,1,1.257,1.257Z" transform="translate(42.27 83.912) rotate(-90)" fill="#c8bbae"/>
+</svg>
+',
+            ),
         ),
     );
 

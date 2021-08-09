@@ -1,9 +1,22 @@
-body{
+.page-wrapper{
   max-width: 1920px;
   width: 90% !important;
   margin: 0 auto;
   border-left: 1px solid #C8BBAE;
   border-right: 1px solid #C8BBAE;
+  overflow-x: hidden;
+}
+main{
+  margin-top: -1.5rem;
+}
+.social{
+  li{
+    margin-right: 0 !important;
+    svg{
+      height: 38px;
+      width: 38px;
+    }
+  }
 }
 
 
@@ -23,8 +36,153 @@ body{
 h5{
   font-family: 'Beyond The Mountains';
 }
+.ghostkit-button{
+  display: inline-block !important;
+  width: inherit !important;
+}
 
-/*** SLIDER GRID ***/
+/*** HEADER ***/
+#header{
+  transform: none !important;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: #fff;
+  height: 100px;
+  padding-top: 32px;
+  box-shadow: 1px 1px 15px 0 rgba(0,0,0,0.15);
+  .alignwide{
+    display: flex;
+    justify-content: space-between;
+  }
+  ul.menu{
+    display: flex;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    li{
+      margin-right: 20px;
+      &:last-child{
+        margin-right: 0;
+      }
+      &.current-menu-item{
+        a{
+          color: $w-color-primary;
+        }
+      }
+      &.menu-item-has-children{
+        position: relative;
+      }
+      &:hover{
+        &::after{
+          content: '';
+          display: block;
+          position: absolute;
+          height: 25px;
+          width: 100%;
+        }
+        .sub-menu{
+          opacity: 1;
+          visibility: visible;
+          transform: translate(-50%, 0);
+        }
+      }
+      a{
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.85em;
+        color: $w-color-dark;
+        font-weight: 400;
+        &:hover{
+          color: $w-color-primary;
+        }
+      }
+      ul.sub-menu{
+        &::before{
+          content: "";
+          display: inline-block;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 0 6.5px 8px 6.5px;
+          border-color: transparent transparent $w-color-primary transparent;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -100%);
+        }
+        transition: all .5s;
+        opacity: 0;
+        visibility: hidden;
+        border: 1px solid $w-color-primary;
+        background: #fff;
+        position: absolute;
+        top: calc(100% + 25px);
+        left: 50%;
+        transform: translate(-50%, 6%);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        min-width: 225px;
+        li{
+          width: 100%;
+          a{
+            padding: 10px 25px;
+            display: block;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            letter-spacing: 0;
+            text-transform: none;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+  /*
+  .logo-wrapper{
+    width: 250px;
+    margin: 0 7vw;
+    .header__item--logo{
+      display: block;
+      svg{
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+  */
+  .logo-wrapper {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 32px;
+    width: 250px;
+    position: absolute;
+
+    .header__item--logo {
+      display: block;
+
+      svg {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+  .menu-right{
+    display: flex;
+    .socials{
+      margin-left: 20px;
+    }
+  }
+}
+/*** HERO ***/
+.ghostkit-custom-10TT8u{
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  left: 50%;
+}
+
+/*** SLIDER GRID & SLIDER ***/
 .slider-with-grid .ghostkit-col{
   .ghostkit-col-content {
     height: 100%;
@@ -32,6 +190,23 @@ h5{
       height: 100%;
     }
   }
+}
+.ghostkit-carousel-arrow, .slider-arrow{
+  top: 40% !important;
+  border-radius: 0 !important;
+  background-color: $w-color-primary !important;
+  border: 2px solid #fff;
+  opacity: 1 !important;
+  background-image: url('https://nordenholzerhof.local/wp-content/uploads/2021/08/arrow-left.svg');
+  background-position: center;
+  background-size: 18px;
+  background-repeat: no-repeat;
+}
+.ghostkit-carousel-arrow{
+  top: 50% !important;
+}
+.ghostkit-carousel-arrow.ghostkit-carousel-arrow-next, .slider-arrow.slider-arrow-next{
+  background-image: url('https://nordenholzerhof.local/wp-content/uploads/2021/08/arrow-right.svg');
 }
 
 /*** SECION: Newsletter ***/
@@ -57,6 +232,50 @@ h5{
   .post-inner{
     box-shadow: none !important;
     border-bottom: 1px solid $w-color-primary;
+    &.fast-ausgebucht{
+      .post-image{
+        &::before{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          content: 'Noch wenige freie Plätze.';
+          display: block;
+          text-align: center;
+          z-index: 1;
+          font-family: 'Bauer Bodoni Black';
+          font-size: 1.5em;
+          line-height: 1.2;
+          color: #fff;
+          max-width: 190px;
+        }
+        img{
+          filter: blur(2px);
+        }
+      }
+    }
+    &.ausgebucht{
+      .post-image{
+        &::before{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          content: 'Bereits ausgebucht.';
+          display: block;
+          text-align: center;
+          z-index: 1;
+          font-family: 'Bauer Bodoni Black';
+          font-size: 1.5em;
+          line-height: 1.2;
+          color: #fff;
+          max-width: 190px;
+        }
+        img{
+          filter: blur(6px);
+        }
+      }
+    }
     .post-image{
       position: relative;
       overflow: hidden;
@@ -157,6 +376,187 @@ h5{
         margin-bottom: 0;
         color: $w-color-primary;
       }
+    }
+  }
+}
+.connector-adressen{
+  background: $w-color-primary;
+  margin: 200px -3.5rem 0 -3.5rem !important;
+  padding: 0 3.5rem;
+  .post{
+    margin-top: -200px;
+  }
+  .post-inner{
+    background: transparent;
+    .post-image{
+      &::after{
+        display: none;
+      }
+    }
+    .post-content{
+      p{
+        font-family: 'Work Sans';
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9em;
+        margin-bottom: 0;
+        color: #fff;
+        a{
+          color: $w-color-dark;
+          letter-spacing: 0;
+          text-transform: none;
+          &:nth-child(1){
+            font-weight: 700;
+            margin-top: 15px;
+            display: inline-block;
+          }
+        }
+      }
+      h3{
+        font-size: 1.5em;
+        font-family: 'Bauer Bodoni Black';
+        margin: 0.8rem 0 1.2rem 0;
+        color: $w-color-dark;
+        text-transform: none;
+        font-weight: normal;
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+
+/*** ADRESSEN ***/
+
+/*** FOOTER ***/
+#footer{
+  padding: 35px 0;
+  /*box-shadow: -1px -1px 15px 0 rgba(0,0,0,0.15);*/
+  .alignwide{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .scroll-top-btn{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+    a{
+      color: $w-color-primary;
+      font-weight: 400;
+    }
+  }
+}
+
+@media(max-width: $w-breakpoint-xlarge){
+  .connector-adressen{
+    margin: 200px -2.3rem 0 -2.3rem !important;
+    padding: 0 2.3rem !important;
+  }
+  #header{
+    .logo-wrapper{
+      width: 200px;
+    }
+    ul.menu li a{
+      font-size: .6em;
+    }
+  }
+  .ghostkit-custom-Z1kredE.nk-awb-fullheight,
+  .nk-awb-wrap,
+  .nk-awb-inner{
+    height: 650px !important;
+    min-height: inherit;
+  }
+
+}
+@media(max-width: $w-breakpoint-large){
+  .connector-adressen{
+    .post{
+      margin-bottom: 225px;
+      &:nth-child(3),
+      &:nth-child(4){
+        margin-bottom: 0;
+      }
+    }
+  }
+  .header-nav,
+  .menu-hauptmenue-rechts-container{
+    display: none;
+  }
+  #footer{
+    .alignwide{
+      flex-direction: column;
+      .scroll-top-btn{
+        position: unset;
+        top: inherit;
+        left: inherit;
+        transform: none;
+      }
+      .footer-social{
+        order: 2;
+      }
+      .footer-menu{
+        order: 3;
+        text-align: center;
+      }
+    }
+  }
+}
+@media(max-width: $w-breakpoint-medium){
+  .ghostkit-custom-DJz73{
+    height: 350px !important;
+  }
+  .slider-with-grid{
+    .ghostkit-col{
+      &:nth-child(2){
+        margin-top: 0 !important;
+      }
+    }
+  }
+  .section-newsletter{
+    .wp-block-image{
+      margin-bottom: 0 !important;
+    }
+    .wp-block-group__inner-container .newsletter-content-wrapper{
+      width: 100% !important;
+      max-width: inherit !important;
+      position: unset;
+      bottom: inherit;
+      left: inherit;
+      margin: 0;
+      padding: 35px;
+    }
+  }
+  .connector-adressen{
+    margin: 175px -1rem 0 -1rem !important;
+    padding: 0 1rem !important;
+  }
+}
+@media(max-width: $w-breakpoint-small){
+  .socials{
+    display: none !important;
+  }
+  #header .logo-wrapper{
+    left: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 150px;
+  }
+  .ghostkit-custom-Z1kredE.nk-awb-fullheight,
+  .nk-awb-wrap,
+  .nk-awb-inner{
+    height: 350px !important;
+    min-height: inherit;
+  }
+  .connector-adressen .post{
+    margin-top: -170px;
+    margin-bottom: 160px;
+    .post-image{
+      max-width: 75%;
+      margin: 0 auto;
     }
   }
 }
