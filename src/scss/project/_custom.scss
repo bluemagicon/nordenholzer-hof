@@ -188,6 +188,7 @@ h5{
     height: 100%;
     .nk-awb{
       height: 100%;
+      background: $w-color-primary;
     }
   }
 }
@@ -534,6 +535,9 @@ h5{
     margin: 175px -1rem 0 -1rem !important;
     padding: 0 1rem !important;
   }
+  .connector-adressen .post:nth-child(3){
+    margin-bottom: 160px;
+  }
 }
 @media(max-width: $w-breakpoint-small){
   .socials{
@@ -558,5 +562,32 @@ h5{
       max-width: 75%;
       margin: 0 auto;
     }
+  }
+  .is-style-h5, .w-h5, h5{
+    font-size: 1.4em;
+  }
+  .is-style-h6, .w-h6, h6{
+    font-size: 0.7em;
+  }
+  .is-style-h1, .w-h1, h1{
+    font-size: 1.6em;
+  }
+  .is-style-h1-longwrap{
+    white-space: inherit;
+  }
+  .ghostkit-custom-Z1kredE{
+    .ghostkit-icon-box{
+      width: 75px;
+    }
+  }
+  .connector .post-inner .post-content p,
+  .connector-news .post-inner .post-content h3{
+    font-size: 1.2em;
+  }
+  .connector-adressen p{
+    font-size: 0.8em !important;
+  }
+  .connector-adressen .post-inner .post-content p a:nth-child(1){
+    margin-top: 5px;
   }
 }
