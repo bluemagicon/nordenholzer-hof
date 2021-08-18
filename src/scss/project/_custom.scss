@@ -453,6 +453,7 @@ h5{
 }
 
 .cleverreach-checkbox{
+  margin: 15px 0;
   display: flex;
   input{
     margin-top: 7px;
@@ -473,6 +474,12 @@ h5{
   border-radius: 1px;
   padding: 0.9em 1.6em;
   color: #fff;
+  font-size: 0.875em;
+  transition: all .3s;
+  &:hover{
+    background: #fff;
+    color: $w-color-primary;
+  }
 }
 
 @media(max-width: $w-breakpoint-xlarge){
