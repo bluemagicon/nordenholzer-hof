@@ -452,6 +452,29 @@ h5{
   }
 }
 
+.cleverreach-checkbox{
+  display: flex;
+  input{
+    margin-top: 7px;
+    background: transparent;
+    border: 2px solid #fff;
+  }
+  label{
+    font-weight: 200;
+    font-size: 0.8em;
+  }
+}
+.haet-cleverreach-field-wrap.type-submit{
+  text-align: left;
+}
+#haet-cleverreach-submit{
+  display: inline-block;
+  border: 2px solid #fff;
+  border-radius: 1px;
+  padding: 20px 35px;
+  color: #fff;
+}
+
 @media(max-width: $w-breakpoint-xlarge){
   .connector-adressen{
     margin: 200px -2.3rem 0 -2.3rem !important;
