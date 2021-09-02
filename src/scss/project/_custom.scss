@@ -40,6 +40,20 @@ h5{
   display: inline-block !important;
   width: inherit !important;
 }
+.small-on-breakpoint{
+  @media(max-width: $w-breakpoint-xlarge){
+    font-size: 2em !important;
+  }
+  @media(max-width: $w-breakpoint-large){
+    font-size: 1.6em !important;
+  }
+  @media(max-width: $w-breakpoint-medium){
+    font-size: 1.3em !important;
+  }
+  @media(max-width: $w-breakpoint-small){
+    font-size: 1.5em !important;
+  }
+}
 
 /*** HEADER ***/
 #header{
