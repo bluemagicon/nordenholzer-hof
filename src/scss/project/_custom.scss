@@ -295,7 +295,7 @@ h5{
       position: relative;
       overflow: hidden;
       img{
-        transform: none !important;
+
       }
       &::after{
         content: '';
@@ -359,6 +359,7 @@ h5{
         }
       }
       p{
+        line-height: 1.2;
         &:nth-child(2){
           display: none;
         }
@@ -458,10 +459,13 @@ h5{
       left: 50%;
       transform: translate(-50%, -50%);
       cursor: pointer;
+      height: 80px;
+      width: 80px;
     }
     a{
       color: $w-color-primary;
       font-weight: 400;
+      font-size: 0.8em;
     }
   }
 }
