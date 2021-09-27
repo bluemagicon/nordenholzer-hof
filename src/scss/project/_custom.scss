@@ -40,20 +40,6 @@ h5{
   display: inline-block !important;
   width: inherit !important;
 }
-.small-on-breakpoint{
-  @media(max-width: $w-breakpoint-xlarge){
-    font-size: 2em !important;
-  }
-  @media(max-width: $w-breakpoint-large){
-    font-size: 1.6em !important;
-  }
-  @media(max-width: $w-breakpoint-medium){
-    font-size: 1.3em !important;
-  }
-  @media(max-width: $w-breakpoint-small){
-    font-size: 1em !important;
-  }
-}
 
 /*** HEADER ***/
 #header{
@@ -203,6 +189,10 @@ h5{
     .nk-awb{
       height: 100%;
       background: $w-color-primary;
+      .nk-awb-rendered,
+      .nk-awb-inner{
+        height: 100% !important;
+      }
     }
   }
 }
@@ -294,9 +284,6 @@ h5{
     .post-image{
       position: relative;
       overflow: hidden;
-      img{
-
-      }
       &::after{
         content: '';
         height: 95%;
@@ -319,9 +306,6 @@ h5{
       text-align: center;
       margin-left: 0;
       margin-right: 0;
-      .css-events-list{
-        display: none;
-      }
       h3{
         font-family: 'Work Sans';
         font-weight: 400;
@@ -332,36 +316,16 @@ h5{
         color: $w-color-primary;
       }
       p{
-        font-size: 1.5em;
+        font-size: 1.3em;
         font-family: 'Bauer Bodoni Black';
-        margin: 0.8rem 0 1.2rem 0;
+        margin: 0.8rem 0 1rem 0;
       }
-    }
-  }
-}
-.connector-veranstaltungen{
-  .post-inner{
-    .post-content{
-      .css-events-list{
+      .events-excerpt{
         display: flex;
-        justify-content: center;
-        thead{
-          display: none;
-        }
-        tbody{
-          tr{
-            td{
-              &:last-child{
-                display: none;
-              }
-            }
-          }
-        }
-      }
-      p{
-        line-height: 1.2;
-        &:nth-child(2){
-          display: none;
+        flex-direction: column-reverse;
+        p:first-child{
+          font-size: 1em;
+          font-family: $w-font-family-body;
         }
       }
     }
@@ -382,15 +346,6 @@ h5{
         text-transform: none;
         font-weight: normal;
         letter-spacing: 0;
-      }
-      span{
-        font-family: 'Work Sans';
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 0.9em;
-        margin-bottom: 0;
-        color: $w-color-primary;
       }
     }
   }

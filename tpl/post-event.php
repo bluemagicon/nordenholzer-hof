@@ -16,25 +16,18 @@ include 'post/load-vars.php';
 ?>
 
 <article <?php post_class('post post--box'); ?> id="post-<?php the_ID(); ?>">
-	<div class="post-inner">
+	<div class="post-inner <?php if(get_field('status', get_the_ID()) == "Noch wenige Plätze frei"){echo 'fast-ausgebucht';}elseif(get_field('status', get_the_ID()) == "Bereits ausgebucht"){echo 'ausgebucht';} ?>">
 
 		<?php if(! $hide_images) { ?>
 			<?php include 'post/thumbnail.php'; ?>
 		<?php } ?>
 
 		<div class="post-content">
-            <?php
-            $category_detail=get_the_category(get_the_ID());
-            foreach($category_detail as $cd){?>
-                <span class="is-style-subheadline has-primary-color has-text-color"><?php echo $cd->cat_name; ?></span>
-            <?php }
-            ?>
-			<?php include 'post/header.php'; ?>
-			<?php if(! $hide_descr) { ?>
+			<span class="is-style-subheadline has-primary-color has-text-color"><?php the_title(); ?></span>
+            <div class="events-excerpt">
                 <?php the_excerpt(); ?>
-			<?php } ?>
-			<!--<?php include 'post/footer.php'; ?>-->
-		</span>
+            </div>
+		</div>
 
 	</div>
 
