@@ -202,16 +202,19 @@ h5{
   background-color: $w-color-primary !important;
   border: 2px solid #fff;
   opacity: 1 !important;
-  background-image: url('https://nordenholzerhof.local/wp-content/uploads/2021/08/arrow-left.svg');
+  background-image: url('../../img/arrow-left.svg');
   background-position: center;
   background-size: 18px;
   background-repeat: no-repeat;
+  svg.ghostkit-svg-icon{
+    display: none !important;
+  }
 }
 .ghostkit-carousel-arrow{
   top: 50% !important;
 }
 .ghostkit-carousel-arrow.ghostkit-carousel-arrow-next, .slider-arrow.slider-arrow-next{
-  background-image: url('https://nordenholzerhof.local/wp-content/uploads/2021/08/arrow-right.svg');
+  background-image: url('../../img/arrow-right.svg');
 }
 
 /*** SECION: Newsletter ***/
