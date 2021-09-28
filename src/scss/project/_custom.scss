@@ -33,7 +33,7 @@ main{
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-h5{
+.is-style-font-beyond-the-mountains{
   font-family: 'Beyond The Mountains';
 }
 .ghostkit-button{
@@ -138,19 +138,6 @@ h5{
       }
     }
   }
-  /*
-  .logo-wrapper{
-    width: 250px;
-    margin: 0 7vw;
-    .header__item--logo{
-      display: block;
-      svg{
-        width: 100%;
-        display: block;
-      }
-    }
-  }
-  */
   .logo-wrapper {
     left: 50%;
     transform: translateX(-50%);
@@ -174,12 +161,131 @@ h5{
     }
   }
 }
-/*** HERO ***/
-.ghostkit-custom-10TT8u{
-  position: absolute;
-  bottom: 0;
-  transform: translate(-50%, 50%);
-  left: 50%;
+
+.fixed-sidebar{
+  position: fixed;
+  right: 1.25%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  ul{
+    list-style: none;
+    li{
+      margin-bottom: 12px;
+      padding: 5px;
+      border: 1px solid $w-color-primary;
+      border-radius: 100%;
+      a{
+        color: #fff;
+        background: $w-color-primary;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 38px;
+        width: 38px;
+        position: relative;
+        span{
+          position: absolute;
+          display: block;
+          visibility: hidden;
+          opacity: 0;
+          background: $w-color-primary;
+          left: 0;
+          top: 50%;
+          transform: translate(-110%, -50%);
+          padding: 10px;
+          border-radius: 10px;
+          font-size: 0.9em;
+          font-weight: 400;
+          transition: opacity .3s;
+        }
+        &:hover{
+          span{
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.uk-modal-container{
+  background: rgba(188, 174, 159, 0.8) !important;
+  .uk-modal-body{
+    width: 90% !important;
+    max-width: 900px !important;
+    background: none !important;
+    padding: 10px;
+    border: 3px solid #fff;
+    .modal-inner{
+      padding: 5rem;
+      background: #fff;
+      .uk-close{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        > svg:not(.custom-icon){
+          display: none !important;
+        }
+      }
+      .txt-link{
+        color: inherit;
+      }
+      .is-style-subheadline,
+      h2{
+        display: block;
+        text-align: center;
+      }
+      h2{
+        margin-bottom: 4rem;
+      }
+      .block{
+        .block-inner {
+          border-top: 1px solid $w-color-primary;
+        }
+      }
+      .content-wrapper{
+        border-top: 1px solid $w-color-primary;
+      }
+      .button-wrapper{
+        border-top: 1px solid $w-color-primary;
+        padding-top: 25px;
+        margin-top: 25px;
+      }
+      .button{
+        display: block;
+        border: 2px solid $w-color-primary;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+/*** NK/AWB ***/
+.nk-awb{
+  &.is-style-hero{
+    height: 75vh;
+    min-height: inherit;
+    .ghostkit-icon-box{
+      position: absolute;
+      bottom: 0;
+      transform: translate(-50%, 50%);
+      left: 50%;
+    }
+  }
+  &.is-style-big-height{
+    height: 65vh;
+    min-height: inherit;
+  }
+  &.is-style-middle-height{
+    height: 50vh;
+    min-height: inherit;
+  }
 }
 
 /*** SLIDER GRID & SLIDER ***/
@@ -324,11 +430,11 @@ h5{
         margin: 0.8rem 0 1rem 0;
       }
       .events-excerpt{
-        display: flex;
-        flex-direction: column-reverse;
-        p:first-child{
-          font-size: 1em;
-          font-family: $w-font-family-body;
+        p:nth-child(2){
+          display: none !important;
+        }
+        strong{
+          display: block;
         }
       }
     }
@@ -470,12 +576,6 @@ h5{
       font-size: .6em;
     }
   }
-  .ghostkit-custom-Z1kredE.nk-awb-fullheight,
-  .nk-awb-wrap,
-  .nk-awb-inner{
-    height: 650px !important;
-    min-height: inherit;
-  }
 
 }
 @media(max-width: $w-breakpoint-large){
@@ -553,12 +653,6 @@ h5{
     top: 50%;
     transform: translate(0, -50%);
     width: 150px;
-  }
-  .ghostkit-custom-Z1kredE.nk-awb-fullheight,
-  .nk-awb-wrap,
-  .nk-awb-inner{
-    height: 350px !important;
-    min-height: inherit;
   }
   .connector-adressen .post{
     margin-top: -170px;

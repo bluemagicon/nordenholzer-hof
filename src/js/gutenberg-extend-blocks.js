@@ -89,6 +89,22 @@ wp.blocks.registerBlockStyle( 'core/list', {
 } );
 */
 
+// ----------------------------------------------------
+// ----------------------------------------------------
+// Block: nk-awb
+// ----------------------------------------------------
+wp.blocks.registerBlockStyle( 'nk/awb', {
+	name: 'big-height',
+	label: '65vh'
+} );
+wp.blocks.registerBlockStyle( 'nk/awb', {
+	name: 'middle-height',
+	label: '50vh'
+} );
+wp.blocks.registerBlockStyle( 'nk/awb', {
+	name: 'hero',
+	label: 'Hero'
+} );
 
 // ----------------------------------------------------
 // ----------------------------------------------------
@@ -134,6 +150,11 @@ wp.blocks.registerBlockStyle( 'core/heading', {
 wp.blocks.registerBlockStyle( 'core/heading', {
 	name: 'subheadline',
 	label: 'Subheadline'
+} );
+
+wp.blocks.registerBlockStyle( 'core/heading', {
+	name: 'font-beyond-the-mountains',
+	label: 'Font: Beyond The Mountains'
 } );
 
 

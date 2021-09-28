@@ -113,6 +113,9 @@ $page_support	= $override_support ?: $global_support;
 
 <?php
 include 'tpl/partials/offcanvas.php';
+include 'tpl/partials/fixed-sidebar.php';
+include 'tpl/partials/modals.php';
+
 wp_footer() ;
 ?>
 

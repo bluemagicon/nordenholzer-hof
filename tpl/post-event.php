@@ -22,10 +22,30 @@ include 'post/load-vars.php';
 			<?php include 'post/thumbnail.php'; ?>
 		<?php } ?>
 
+        <?php
+            $originalDate = $post->$post_excerpt['_event_start_date'][0];
+            $timestamp = strtotime($originalDate);
+            $newDate = date("d. F Y", $timestamp );
+
+            $originalDate = $post->$post_excerpt['_event_end_date'][0];
+            $timestamp = strtotime($originalDate);
+            $newDate_end = date("d. F Y", $timestamp);
+
+            $originalTime = $post->$post_excerpt['_event_start_time'][0];
+            $timestamp = strtotime($originalTime);
+            $newTime = date("H:i", $timestamp);
+
+            $originalTime = $post->$post_excerpt['_event_end_time'][0];
+            $timestamp = strtotime($originalTime);
+            $newTime_end = date("H:i", $timestamp);
+        ?>
+
 		<div class="post-content">
-			<span class="is-style-subheadline has-primary-color has-text-color"><?php the_title(); ?></span>
             <div class="events-excerpt">
+                <h3 class="post-title"><?php echo get_the_title(); ?></h3>
                 <?php the_excerpt(); ?>
+                <strong class="date"><?= $newDate ?><?php if($newDate != $newDate_end){ ?> - <?= $newDate_end ?><?php } ?></strong>
+                <span class="time"><?= $newTime ?> Uhr - <?= $newTime_end ?> Uhr</span>
             </div>
 		</div>
 
