@@ -512,10 +512,10 @@ main{
 
 /*** PORTFOLIO ***/
 .vp-pagination__load-more{
-  font-weight: 400;
-  border-radius: 0;
-  background: $w-color-primary;
-  color: #fff;
+  font-weight: 400 !important;
+  border-radius: 0 !important;
+  background: $w-color-primary !important;
+  color: #fff !important;
 }
 
 /*** FOOTER ***/
