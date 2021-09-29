@@ -211,6 +211,10 @@ main{
   }
 }
 
+.txt-link{
+  color: inherit;
+}
+
 .uk-modal-container{
   background: rgba(188, 174, 159, 0.8) !important;
   .uk-modal-body{
@@ -230,9 +234,6 @@ main{
         > svg:not(.custom-icon){
           display: none !important;
         }
-      }
-      .txt-link{
-        color: inherit;
       }
       .is-style-subheadline,
       h2{
@@ -269,6 +270,9 @@ main{
 /*** NK/AWB ***/
 .nk-awb{
   &.is-style-hero{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     height: 75vh;
     min-height: inherit;
     .ghostkit-icon-box{
@@ -429,12 +433,12 @@ main{
         font-family: 'Bauer Bodoni Black';
         margin: 0.8rem 0 1rem 0;
       }
+      strong{
+        display: block;
+      }
       .events-excerpt{
         p:nth-child(2){
           display: none !important;
-        }
-        strong{
-          display: block;
         }
       }
     }
@@ -506,12 +510,18 @@ main{
   }
 }
 
-/*** ADRESSEN ***/
+/*** PORTFOLIO ***/
+.vp-pagination__load-more{
+  font-weight: 400;
+  border-radius: 0;
+  background: $w-color-primary;
+  color: #fff;
+}
 
 /*** FOOTER ***/
 #footer{
   padding: 35px 0;
-  /*box-shadow: -1px -1px 15px 0 rgba(0,0,0,0.15);*/
+  margin-top: 5rem;
   .alignwide{
     position: relative;
     display: flex;
