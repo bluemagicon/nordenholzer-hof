@@ -159,27 +159,27 @@ function baw_init()
 
     // 1/4 Grid
     add_image_size('baw-xs', 375, 375, false);
-    add_image_size('baw-xs-fix', 375, 238, array( 'center', 'center' ));
+    add_image_size('baw-xs-fix', 375, 375, array( 'center', 'center' ));
     //add_image_size('baw-xs-quad', 375, 375, array( 'center', 'center' ));
 
     // 1/3 Grid
     add_image_size('baw-s', 500, 500, false);
-    add_image_size('baw-s-fix', 500, 317, array( 'center', 'center' ));
+    add_image_size('baw-s-fix', 500, 500, array( 'center', 'center' ));
     //add_image_size('baw-s-quad', 500, 500, array( 'center', 'center' ));
 
     // 1/2 Grid
     add_image_size('baw-m', 750, 750, false);
-    add_image_size('baw-m-fix', 750, 475, array( 'center', 'center' ));
+    add_image_size('baw-m-fix', 750, 750, array( 'center', 'center' ));
     //add_image_size('baw-m-quad', 750, 750, array( 'center', 'center' ));
 
     // 2/3 Grid
     add_image_size('baw-l', 1000, 1000, false);
-    add_image_size('baw-l-fix', 1000, 633, array( 'center', 'center' ));
+    add_image_size('baw-l-fix', 1000, 1000, array( 'center', 'center' ));
     //add_image_size('baw-l-quad', 1000, 1000, array( 'center', 'center' ));
 
     // 1/1 Grid
     add_image_size('baw-xl', 1500, 1500, false);
-    add_image_size('baw-xl-fix', 1500, 950, array( 'center', 'center' ));
+    add_image_size('baw-xl-fix', 1500, 1500, array( 'center', 'center' ));
 
 
     //

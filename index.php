@@ -76,12 +76,21 @@
      	?>
      		<header class="archive-header single-header">
      			<div class="archive-header-inner single-header-inner">
-     				<?php if ( $archive_title ) { ?>
-     					<h1 class="archive-title"><?php echo wp_kses_post( $archive_title ); ?></h1>
-     				<?php } ?>
-                    <?php if ( $archive_subtitle ) { ?>
-                        <div class="archive-subtitle"><?php echo wp_kses_post( wpautop( $archive_subtitle ) ); ?></div>
-                    <?php } ?>
+     				<span class="has-text-align-center is-style-subheadline has-primary-color has-text-color"><?= get_the_archive_title(); ?></span>
+                    <?php if(have_rows('opt_blog', 'option')) : the_row(); ?>
+                        <h1 class="has-text-align-center"><?= get_sub_field('blog_text_above_archive'); ?></h1>
+                    <?php endif; ?>
+                    <ul class="blog-navigation">
+                        <?php for($i = 0; $i < count(get_categories()); $i++){ ?>
+                            <?php
+                                $category_id = get_categories()[$i]->cat_ID;
+                                $category_link = get_category_link($category_id);
+                            ?>
+                            <li>
+                                <a href="<?= $category_link; ?>"><?= get_categories()[$i]->name ?></a>
+                            </li>
+                        <?php } ?>
+                    </ul>
      			</div>
                 <div class="filter">
                     <?php if(is_home()) { ?>

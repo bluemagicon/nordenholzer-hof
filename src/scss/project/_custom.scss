@@ -165,8 +165,7 @@ main{
 .fixed-sidebar{
   position: fixed;
   right: 1.25%;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 5%;
   z-index: 999;
   ul{
     list-style: none;
@@ -195,7 +194,6 @@ main{
           top: 50%;
           transform: translate(-110%, -50%);
           padding: 10px;
-          border-radius: 10px;
           font-size: 0.9em;
           font-weight: 400;
           transition: opacity .3s;
@@ -346,7 +344,8 @@ main{
 }
 
 /*** CONNECTOR ***/
-.connector{
+.connector,
+.archive-listing{
   .post-inner{
     box-shadow: none !important;
     border-bottom: 1px solid $w-color-primary;
@@ -444,7 +443,8 @@ main{
     }
   }
 }
-.connector-news{
+.is-style-news-connector,
+.archive-listing{
   .post-inner{
     .post-content{
       p{
@@ -506,6 +506,74 @@ main{
         font-weight: normal;
         letter-spacing: 0;
       }
+    }
+  }
+}
+
+/*** PAGE_ARCHIVE & SINGLE ***/
+.archive,
+.single{
+  .post{
+    margin-bottom: 35px;
+  }
+  .archive-header,
+  .single-header{
+    background: none;
+    padding: 10rem 0 5rem 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      li{
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+        font-weight: 400;
+        &:first-child{
+          &::before{
+            display: none;
+          }
+        }
+        &::before{
+          content: '';
+          display: block;
+          height: 10px;
+          width: 10px;
+          border-radius: 100%;
+          border: 1px solid $w-color-primary;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+  .archive-listing{
+    margin-top: 0;
+  }
+}
+.single{
+  #footer{
+    margin-top: 0;
+  }
+  .post{
+    margin-bottom: 0;
+  }
+  .single-content{
+    .wp-block-group{
+      &:first-child{
+        margin-top: 0;
+      }
+    }
+  }
+  .single-footer{
+    padding: 30px 0;
+    margin-top: 0;
+    background: $w-color-primary;
+    a{
+      color: #fff;
     }
   }
 }
@@ -690,7 +758,7 @@ main{
     }
   }
   .connector .post-inner .post-content p,
-  .connector-news .post-inner .post-content h3{
+  .is-style-news-connector .post-inner .post-content h3{
     font-size: 1.2em;
   }
   .connector-adressen p{

@@ -33,7 +33,6 @@ include 'post/load-vars.php';
 			<?php if(! $hide_descr) { ?>
                 <?php the_excerpt(); ?>
 			<?php } ?>
-			<!--<?php include 'post/footer.php'; ?>-->
 		</span>
 
 	</div>
