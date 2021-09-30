@@ -62,6 +62,7 @@ if($stars) {
 					the_excerpt();
 				}
 				?>
+                <a data-custom-open="modal-bewertungen" data-content="<?= urlencode($data['text']) ?>">weiterlesen</a>
 			<?php } ?>
 		</div>
 

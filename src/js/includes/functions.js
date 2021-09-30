@@ -48,6 +48,19 @@ jQuery(document).ready(function () {
         }, 1);
     }
 
+
+    //MODAL
+    jQuery('[data-custom-open="modal-bewertungen"]').click(function() {
+        var title = jQuery(this).data('title');
+        var subtitle = jQuery(this).data('subtitle');
+        var content = decodeURIComponent(jQuery(this).data('content').replace(/\+/g, ' '));
+
+        jQuery('#dyn-modal-title').empty().append(title);
+        jQuery('#dyn-modal-subtitle').empty().append(subtitle);
+        jQuery('#dyn-modal-content').empty().append(content);
+    });
+
+
     //SCROLL-TOP BTN
     jQuery(".scroll-top-btn").click(function () {
         jQuery("html, body").animate({scrollTop: 0}, 2000);

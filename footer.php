@@ -60,6 +60,33 @@ $page_support	= $override_support ?: $global_support;
 </footer>
 </div>
 
+<div id="modal-bewertungen" class="uk-flex-top uk-modal-container" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <div class="modal-inner">
+            <button class="uk-modal-close-default" type="button" uk-close>
+                <svg class="custom-icon" xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68">
+                    <g id="Gruppe_106" data-name="Gruppe 106" transform="translate(-1369 -2905)">
+                        <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1369 2905)" fill="#fff" stroke="#c8bbae" stroke-width="1">
+                            <circle cx="34" cy="34" r="34" stroke="none"/>
+                            <circle cx="34" cy="34" r="33.5" fill="none"/>
+                        </g>
+                        <g id="Ellipse_5" data-name="Ellipse 5" transform="translate(1375 2911)" fill="#fff" stroke="#c8bbae" stroke-width="2">
+                            <circle cx="28" cy="28" r="28" stroke="none"/>
+                            <circle cx="28" cy="28" r="27" fill="none"/>
+                        </g>
+                        <path id="Pfad_283" data-name="Pfad 283" d="M14.636,12.636l7-7,2,2-7,7,7,7-2,2-7-7-7,7-2-2,7-7-7-7,2-2Z" transform="translate(1388.364 2924.364)" fill="#bcae9f"/>
+                    </g>
+                </svg>
+            </button>
+            <span class="is-style-subheadline has-primary-color has-text-color">Subheadline</span>
+            <h2 class="uk-modal-title"></h2>
+            <div class="content-wrapper">
+                <p>Content</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <?php
 include 'tpl/partials/offcanvas.php';
 include 'tpl/partials/fixed-sidebar.php';

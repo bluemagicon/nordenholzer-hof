@@ -116,7 +116,7 @@ function baw_register_my_cpts() {
 		"public" => true,
 		"publicly_queryable" => true,
 		"show_ui" => true,
-		"show_in_rest" => true,
+		"show_in_rest" => false,
 		"rest_base" => "",
 		"rest_controller_class" => "WP_REST_Posts_Controller",
 		"has_archive" => true,
@@ -131,89 +131,12 @@ function baw_register_my_cpts() {
 		"query_var" => true,
 		"menu_position" => 24,
 		"menu_icon" => "dashicons-star-filled",
-		"supports" => [ "title", "thumbnail" ],
+		"supports" => [ "title", "thumbnail", "editor" ],
 		"show_in_graphql" => false,
 	];
 
 	register_post_type( "bewertung", $args );
 
-
-	/**
-	 * Post Type: Projekte.
-	 */
-
-	$labels = [
-		"name" => __( "Projekte", "baw" ),
-		"singular_name" => __( "Projekt", "baw" ),
-	];
-
-	$args = [
-		"label" => __( "Projekte", "baw" ),
-		"labels" => $labels,
-		"description" => "",
-		"public" => true,
-		"publicly_queryable" => true,
-		"show_ui" => true,
-		"show_in_rest" => true,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => true,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"delete_with_user" => false,
-		"exclude_from_search" => false,
-		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
-		"rewrite" => [ "slug" => "projekt", "with_front" => true ],
-		"query_var" => true,
-		"menu_position" => 21,
-		"menu_icon" => "dashicons-archive",
-		"supports" => [ "title", "editor", "thumbnail", "excerpt", "revisions" ],
-		"taxonomies" => [ "target", "funnel" ],
-		"show_in_graphql" => false,
-	];
-
-	register_post_type( "projekt", $args );
-
-
-	/**
-	 * Post Type: Leistungen.
-	 */
-
-	$labels = [
-		"name" => __( "Leistungen", "baw" ),
-		"singular_name" => __( "Leistung", "baw" ),
-	];
-
-	$args = [
-		"label" => __( "Leistungen", "baw" ),
-		"labels" => $labels,
-		"description" => "",
-		"public" => true,
-		"publicly_queryable" => true,
-		"show_ui" => true,
-		"show_in_rest" => true,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => false,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"delete_with_user" => false,
-		"exclude_from_search" => false,
-		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
-		"rewrite" => [ "slug" => "leistung", "with_front" => true ],
-		"query_var" => true,
-		"menu_position" => 20,
-		"menu_icon" => "dashicons-hammer",
-		"supports" => [ "title", "editor", "thumbnail" ],
-		"taxonomies" => [ "location", "target", "funnel" ],
-		"show_in_graphql" => false,
-	];
-
-	register_post_type( "leistung", $args );
 }
 
 add_action( 'init', 'baw_register_my_cpts' );

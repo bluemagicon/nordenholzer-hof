@@ -49,7 +49,7 @@ main{
   background: #fff;
   height: 100px;
   padding-top: 32px;
-  box-shadow: 1px 1px 15px 0 rgba(0,0,0,0.15);
+  border-bottom: 1px solid $w-color-primary;
   .alignwide{
     display: flex;
     justify-content: space-between;
