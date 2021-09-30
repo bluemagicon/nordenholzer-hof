@@ -43,7 +43,7 @@ if($stars) {
             <h3><?= $data['headline'] ?></h3>
             <?php if(! $hide_descr) { ?>
                 <?php the_excerpt(); ?>
-                <a uk-toggle="target: #modal-bewertungen" data-content="<?= urlencode($data['text']) ?>" data-title="<?= urlencode($data['headline']) ?>" data-subtitle="<?= $data['subheadline'] ?>" class="open-dyn-modal">weiterlesen</a>
+                <a uk-toggle="target: #modal-bewertungen" data-content="<?php the_content(); ?>" data-title="<?= urlencode($data['headline']) ?>" data-subtitle="<?= $data['subheadline'] ?>" class="open-dyn-modal">weiterlesen</a>
             <?php } ?>
         </div>
 
