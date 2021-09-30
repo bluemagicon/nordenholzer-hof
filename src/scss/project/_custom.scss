@@ -271,8 +271,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 75vh;
-    min-height: inherit;
+    min-height: 75vh !important;
     .ghostkit-icon-box{
       position: absolute;
       bottom: 0;
@@ -281,12 +280,10 @@ main{
     }
   }
   &.is-style-big-height{
-    height: 65vh;
-    min-height: inherit;
+    min-height: 65vh !important;
   }
   &.is-style-middle-height{
-    height: 50vh;
-    min-height: inherit;
+    min-height: 50vh !important;
   }
 }
 
@@ -419,46 +416,65 @@ main{
       margin-left: 0;
       margin-right: 0;
       h3{
-        font-family: 'Work Sans';
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 0.9em;
-        margin-bottom: 0;
-        color: $w-color-primary;
-      }
-      p{
-        font-size: 1.3em;
         font-family: 'Bauer Bodoni Black';
-        margin: 0.8rem 0 1rem 0;
+        margin: 0.8rem 0 1.2rem 0;
       }
       strong{
         display: block;
       }
-      .events-excerpt{
-        p:nth-child(2){
-          display: none !important;
-        }
-      }
     }
   }
-}
-.is-style-news-connector,
-.archive-listing{
-  .post-inner{
-    .post-content{
-      p{
-        font-size: 1em;
-        font-family: 'Work Sans';
+  .type-adressen{
+    margin-top: -200px;
+    .post-inner{
+      background: transparent;
+      .post-image{
+        border-radius: 100%;
+        position: relative;
+        img{
+          transform: none !important;
+        }
+        &::before{
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          height: 100%;
+          width: 100%;
+          border: 12px solid #fff;
+          border-radius: 100%;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+        }
+        &::after{
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          height: calc(100% - 10px);
+          width: calc(100% - 10px);
+          border: 3px solid $w-color-primary;
+          border-radius: 100%;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+        }
       }
-      h3{
-        font-size: 1.5em;
-        font-family: 'Bauer Bodoni Black';
-        margin: 0.8rem 0 1.2rem 0;
-        color: $w-color-dark;
-        text-transform: none;
-        font-weight: normal;
-        letter-spacing: 0;
+      .post-content{
+        p{
+          font-family: 'Work Sans';
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 0.9em;
+          margin-bottom: 25px;
+          color: #fff;
+        }
+        .txt-link{
+          color: inherit;
+          &:hover{
+            color: #fff !important;
+          }
+        }
       }
     }
   }
@@ -467,47 +483,6 @@ main{
   background: $w-color-primary;
   margin: 200px -3.5rem 0 -3.5rem !important;
   padding: 0 3.5rem;
-  .post{
-    margin-top: -200px;
-  }
-  .post-inner{
-    background: transparent;
-    .post-image{
-      &::after{
-        display: none;
-      }
-    }
-    .post-content{
-      p{
-        font-family: 'Work Sans';
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 0.9em;
-        margin-bottom: 0;
-        color: #fff;
-        a{
-          color: $w-color-dark;
-          letter-spacing: 0;
-          text-transform: none;
-          &:nth-child(1){
-            font-weight: 700;
-            margin-top: 15px;
-            display: inline-block;
-          }
-        }
-      }
-      h3{
-        font-size: 1.5em;
-        font-family: 'Bauer Bodoni Black';
-        margin: 0.8rem 0 1.2rem 0;
-        color: $w-color-dark;
-        text-transform: none;
-        font-weight: normal;
-        letter-spacing: 0;
-      }
-    }
-  }
 }
 
 /*** PAGE_ARCHIVE & SINGLE ***/
@@ -554,6 +529,16 @@ main{
     margin-top: 0;
   }
 }
+
+/*** PORTFOLIO ***/
+.vp-pagination__load-more{
+  font-weight: 400 !important;
+  border-radius: 0 !important;
+  background: $w-color-primary !important;
+  color: #fff !important;
+}
+
+/*** FOOTER ***/
 .single{
   #footer{
     margin-top: 0;
@@ -577,16 +562,6 @@ main{
     }
   }
 }
-
-/*** PORTFOLIO ***/
-.vp-pagination__load-more{
-  font-weight: 400 !important;
-  border-radius: 0 !important;
-  background: $w-color-primary !important;
-  color: #fff !important;
-}
-
-/*** FOOTER ***/
 #footer{
   padding: 35px 0;
   margin-top: 5rem;

@@ -23,10 +23,10 @@ include 'post/load-vars.php';
 		<?php } ?>
 
 		<div class="post-content">
-			<h3><?php the_title(); ?></h3>
-            <p><?= get_post()->$ID['content'][0]; ?></p>
-            <strong><a class="txt-link" href="tel:<?= get_post()->$ID['telefonnummer'][0]; ?>"><?= get_post()->$ID['telefonnummer'][0]; ?></a></strong>
-            <a class="txt-link" href="mailto:<?= get_post()->$ID['e-mail-adresse'][0]; ?>"><?= get_post()->$ID['e-mail-adresse'][0]; ?></a>
+            <span class="is-style-subheadline has-primary-color has-text-color"><?= get_post()->post_excerpt; ?></span>
+			<?php include 'post/header.php'; ?>
+		</span>
+
 	</div>
 
 </article>

@@ -112,8 +112,8 @@ wp.blocks.registerBlockStyle( 'nk/awb', {
 // Block: Connector
 // ----------------------------------------------------
 wp.blocks.registerBlockStyle( 'acf/connector', {
-	name: 'news-connector',
-	label: 'News-Connector'
+	name: 'rounded-images',
+	label: 'Runde Bilder'
 } );
 
 

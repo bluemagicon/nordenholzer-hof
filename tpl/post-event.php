@@ -42,8 +42,8 @@ include 'post/load-vars.php';
 
 		<div class="post-content">
             <div class="events-excerpt">
+                <span class="is-style-subheadline has-primary-color has-text-color"><?= get_the_terms(get_the_id(), 'event-categories')[0]->name; ?></span>
                 <h3 class="post-title"><?php echo get_the_title(); ?></h3>
-                <?php the_excerpt(); ?>
                 <strong class="date"><?= $newDate ?><?php if($newDate != $newDate_end){ ?> - <?= $newDate_end ?><?php } ?></strong>
                 <span class="time"><?= $newTime ?> Uhr - <?= $newTime_end ?> Uhr</span>
             </div>

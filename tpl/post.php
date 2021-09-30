@@ -23,12 +23,7 @@ include 'post/load-vars.php';
 		<?php } ?>
 
 		<div class="post-content">
-            <?php
-            $category_detail=get_the_category(get_the_ID());
-            foreach($category_detail as $cd){?>
-                <span class="is-style-subheadline has-primary-color has-text-color"><?php echo $cd->cat_name; ?></span>
-            <?php }
-            ?>
+            <span class="is-style-subheadline has-primary-color has-text-color"><?= get_the_category()[0]->name; ?></span>
 			<?php include 'post/header.php'; ?>
 			<?php if(! $hide_descr) { ?>
                 <?php the_excerpt(); ?>
