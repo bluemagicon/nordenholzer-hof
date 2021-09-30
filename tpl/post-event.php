@@ -23,13 +23,23 @@ include 'post/load-vars.php';
 		<?php } ?>
 
         <?php
+            $monate = array(1=>"Januar", 2=>"Februar", 3=>"M&auml;rz", 4=>"April", 5=>"Mai", 6=>"Juni", 7=>"Juli", 8=>"August", 9=>"September", 10=>"Oktober", 11=>"November", 12=>"Dezember");
+
             $originalDate = $post->$post_excerpt['_event_start_date'][0];
             $timestamp = strtotime($originalDate);
             $newDate = date("d. F Y", $timestamp );
 
+            $month = date("n", $timestamp);
+            $translatedMonth = $monate[$month];
+            $startDate = date("d. ", $timestamp) . $translatedMonth . date(" Y", $timestamp);
+
             $originalDate = $post->$post_excerpt['_event_end_date'][0];
             $timestamp = strtotime($originalDate);
             $newDate_end = date("d. F Y", $timestamp);
+
+            $month = date("n", $timestamp);
+            $translatedMonth = $monate[$month];
+            $endDate = date("d. ", $timestamp) . $translatedMonth . date(" Y", $timestamp);
 
             $originalTime = $post->$post_excerpt['_event_start_time'][0];
             $timestamp = strtotime($originalTime);
@@ -38,13 +48,14 @@ include 'post/load-vars.php';
             $originalTime = $post->$post_excerpt['_event_end_time'][0];
             $timestamp = strtotime($originalTime);
             $newTime_end = date("H:i", $timestamp);
+
         ?>
 
 		<div class="post-content">
             <div class="events-excerpt">
                 <span class="is-style-subheadline has-primary-color has-text-color"><?= get_the_terms(get_the_id(), 'event-categories')[0]->name; ?></span>
                 <h3 class="post-title"><?php echo get_the_title(); ?></h3>
-                <strong class="date"><?= $newDate ?><?php if($newDate != $newDate_end){ ?> - <?= $newDate_end ?><?php } ?></strong>
+                <strong class="date"><?= $startDate ?><?php if($startDate != $endDate){ ?> - <?= $endDate ?><?php } ?></strong>
                 <span class="time"><?= $newTime ?> Uhr - <?= $newTime_end ?> Uhr</span>
             </div>
 		</div>

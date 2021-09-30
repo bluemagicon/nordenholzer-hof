@@ -445,6 +445,22 @@ main{
       }
     }
   }
+  .type-bewertung{
+    .post-stars{
+      svg{
+        fill: $w-color-primary;
+      }
+    }
+    .post-image{
+      &::after{
+        height: 95% !important;
+        width: 95% !important;
+      }
+      img{
+        transform: none !important;
+      }
+    }
+  }
   .type-adressen{
     margin-top: -200px;
     .post-inner{

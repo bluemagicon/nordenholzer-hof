@@ -50,7 +50,7 @@ jQuery(document).ready(function () {
 
 
     //MODAL
-    jQuery('[data-custom-open="modal-bewertungen"]').click(function() {
+    jQuery('.open-dyn-modal').click(function() {
         var title = jQuery(this).data('title');
         var subtitle = jQuery(this).data('subtitle');
         var content = decodeURIComponent(jQuery(this).data('content').replace(/\+/g, ' '));
