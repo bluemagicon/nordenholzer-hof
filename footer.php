@@ -78,10 +78,10 @@ $page_support	= $override_support ?: $global_support;
                     </g>
                 </svg>
             </button>
-            <span class="is-style-subheadline has-primary-color has-text-color" id="dyn-modal-subtitle"></span>
+            <!--<span class="is-style-subheadline has-primary-color has-text-color" id="dyn-modal-subtitle"></span>-->
             <h2 id="dyn-modal-title"></h2>
             <div class="content-wrapper" id="dyn-modal-content">
-                <p>Content</p>
+                <p></p>
             </div>
         </div>
     </div>

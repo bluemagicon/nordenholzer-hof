@@ -57,7 +57,7 @@ jQuery(document).ready(function () {
 
         jQuery('#dyn-modal-title').empty().append(title);
         jQuery('#dyn-modal-subtitle').empty().append(subtitle);
-        jQuery('#dyn-modal-content').empty().append(content);
+        jQuery('#dyn-modal-content p').empty().append(content);
     });
 
 
