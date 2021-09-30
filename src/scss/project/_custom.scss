@@ -4,7 +4,6 @@
   margin: 0 auto;
   border-left: 1px solid #C8BBAE;
   border-right: 1px solid #C8BBAE;
-  overflow-x: hidden;
 }
 main{
   margin-top: -1.5rem;
@@ -140,10 +139,11 @@ main{
   }
   .logo-wrapper {
     left: 50%;
-    transform: translateX(-50%);
-    top: 32px;
+    transform: translate(-50%, -50%);
+    top: 80%;
     width: 250px;
     position: absolute;
+    transition: all .5s;
 
     .header__item--logo {
       display: block;
@@ -160,20 +160,40 @@ main{
       margin-left: 20px;
     }
   }
+  @media(min-width: $w-breakpoint-small) {
+    &.header--scrolled {
+      .logo-wrapper {
+        width: 210px;
+        top: 50%;
+      }
+    }
+  }
 }
 
 .fixed-sidebar{
   position: fixed;
-  right: 1.25%;
-  bottom: 5%;
+  transform: translateX(50%);
+  right: 2.5%;
+  bottom: 2.5%;
   z-index: 999;
   ul{
     list-style: none;
+    padding: 0;
+    margin: 0;
     li{
       margin-bottom: 12px;
-      padding: 5px;
+      padding: 4px;
       border: 1px solid $w-color-primary;
       border-radius: 100%;
+      &.hervorgehoben{
+        border: 1px solid #760F0F;
+        a{
+          background: #760F0F;
+          span{
+            background: #760F0F;
+          }
+        }
+      }
       a{
         color: #fff;
         background: $w-color-primary;
@@ -181,9 +201,10 @@ main{
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 38px;
-        width: 38px;
+        height: 35px;
+        width: 35px;
         position: relative;
+        padding: 9px;
         span{
           position: absolute;
           display: block;
@@ -193,8 +214,8 @@ main{
           left: 0;
           top: 50%;
           transform: translate(-110%, -50%);
-          padding: 10px;
-          font-size: 0.9em;
+          padding: 6px 8px;
+          font-size: 0.8em;
           font-weight: 400;
           transition: opacity .3s;
         }
@@ -625,6 +646,11 @@ main{
     .logo-wrapper{
       width: 200px;
     }
+    &.header--scrolled {
+      .logo-wrapper {
+        width: 180px;
+      }
+    }
     ul.menu li a{
       font-size: .6em;
     }
@@ -665,6 +691,24 @@ main{
   }
 }
 @media(max-width: $w-breakpoint-medium){
+  .page-wrapper{
+    width: 100% !important;
+    border: 0 !important;
+  }
+  .fixed-sidebar{
+    transform: translateX(0);
+    right: 10px;
+    bottom: 10px;
+    ul{
+      li{
+        margin-bottom: 6px;
+        a{
+          height: 30px;
+          width: 30px;
+        }
+      }
+    }
+  }
   .ghostkit-custom-DJz73{
     height: 350px !important;
   }
@@ -705,7 +749,7 @@ main{
     left: 5%;
     top: 50%;
     transform: translate(0, -50%);
-    width: 150px;
+    width: 150px !important;
   }
   .connector-adressen .post{
     margin-top: -170px;

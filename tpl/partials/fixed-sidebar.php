@@ -10,7 +10,7 @@
         <?php if($contact){ ?>
             <li>
                 <a uk-toggle="target: #modal-kontakt">
-                    <?= baw_svg('solid/phone') ?>
+                    <?= baw_svg('solid/phone-alt') ?>
                     <span class="tooltip"><?= $contact['tooltip'] ?></span>
                 </a>
             </li>
@@ -19,7 +19,7 @@
         <?php if($opening){ ?>
             <li>
                 <a uk-toggle="target: #modal-oeffnungszeiten">
-                    <?= baw_svg('solid/clock') ?>
+                    <?= baw_svg('own/clock') ?>
                     <span class="tooltip"><?= $opening['tooltip'] ?></span>
                 </a>
             </li>
@@ -28,14 +28,14 @@
         <?php if($card){ ?>
             <li>
                 <a uk-toggle="target: #modal-speisekarte">
-                    <?= baw_svg('solid/utensils') ?>
+                    <?= baw_svg('own/messer-gabel') ?>
                     <span class="tooltip"><?= $card['tooltip'] ?></span>
                 </a>
             </li>
         <?php } ?>
 
         <?php foreach(get_field('custom_modals', 'option') as $modal) { ?>
-            <li>
+            <li <?php if($modal['hervorgehoben']){ echo 'class="hervorgehoben"'; } ?>>
                 <a uk-toggle="target: #<?= $modal['id'] ?>" uk-toggle>
                     <?= baw_svg($modal['icon']) ?>
                     <span class="tooltip"><?= $modal['tooltip'] ?></span>

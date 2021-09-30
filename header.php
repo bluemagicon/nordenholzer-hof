@@ -51,31 +51,31 @@ $page_header	= $override_header ?: $global_header;
 
 
 <body <?php body_class('w-body'); ?>>
-
 <div class="page-wrapper">
-<header id="header">
-    <div class="alignwide">
-        <div class="header-nav menu-left">
-            <?php echo wp_nav_menu(array('menu' => 'Hauptmenü Links')); ?>
-        </div>
-        <!--
+    <header id="header">
+        <div class="alignwide">
+            <div class="header-nav menu-left">
+                <?php echo wp_nav_menu(array('menu' => 'Hauptmenü Links')); ?>
+            </div>
+            <!--
         <div class="nav-wrapper">
             <?php echo wp_nav_menu(array('menu' => 'Hauptmenü')); ?>
         </div>
         -->
-        <div class="logo-wrapper">
-            <?php include_once 'tpl/partials/logo-function.php'; ?>
-            <?php include 'tpl/partials/logo.php'; ?>
+            <div class="logo-wrapper">
+                <?php include_once 'tpl/partials/logo-function.php'; ?>
+                <?php include 'tpl/partials/logo.php'; ?>
+            </div>
+            <div class="header-nav menu-right">
+                <?php echo wp_nav_menu(array('menu' => 'Hauptmenü Rechts')); ?>
+                <?php if($page_header['show_socialmedia'] && $global_social) { ?>
+                    <div class="socials">
+                        <?php $social_profiles = $global_social;
+                        include 'tpl/partials/social.php'; ?>
+                    </div>
+                <?php } ?>
+            </div>
+            <?php include 'tpl/partials/header-nav-mobile.php'; ?>
         </div>
-        <div class="header-nav menu-right">
-            <?php echo wp_nav_menu(array('menu' => 'Hauptmenü Rechts')); ?>
-            <?php if($page_header['show_socialmedia'] && $global_social) { ?>
-                <div class="socials">
-                    <?php $social_profiles = $global_social;
-                    include 'tpl/partials/social.php'; ?>
-                </div>
-            <?php } ?>
-        </div>
-        <?php include 'tpl/partials/header-nav-mobile.php'; ?>
-    </div>
-</header>
+    </header>
+
