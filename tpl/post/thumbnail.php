@@ -4,7 +4,7 @@
     <?php } else { ?>
         <div class="post-image">
     <?php } ?>
-        <?php the_post_thumbnail(); ?>
+        <?php the_post_thumbnail($thumbnail_size, ['class' => $image_classes]); ?>
     <?php if(! $hide_links) { ?>
     </a>
     <?php } else { ?>
