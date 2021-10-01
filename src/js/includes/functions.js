@@ -69,7 +69,6 @@ jQuery(document).ready(function () {
     // -----------------------------------------------
     // -----------------------------------------------
     // ANCHOR LINKS
-
     jQuery('main a[href*="#"]:not([class*=accordion]):not(._brlbs-btn), header a[href*="#"]:not([class*=accordion]), .offcanvas a[href*="#"]:not([class*=accordion]), .w-scrollto').stop().click(function(e) {
         var target = jQuery(this).attr("href");
         var current_url = window.location.origin + window.location.pathname;
@@ -81,6 +80,7 @@ jQuery(document).ready(function () {
                 scrollTo(target);
                 //UIkit.offcanvas('#offcanvas').hide();
                 offcanvas.close();
+
 
             } else if(target.indexOf(current_url) !== -1) {
                 e.preventDefault();
@@ -98,14 +98,13 @@ jQuery(document).ready(function () {
 
 });
 
-
-
 function scrollTo(target)
 {
     var distance = jQuery(target).offset().top;
-    var navHeight = jQuery('.header').outerHeight() + 40;
+    var navHeight = jQuery('#header').outerHeight() + 40;
 
     jQuery('html, body').animate({
-        scrollTop: (distance-navHeight)
+        scrollTop: (distance - navHeight)
     }, 600);
+
 }
