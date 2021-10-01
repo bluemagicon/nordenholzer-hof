@@ -469,6 +469,7 @@ main{
       .post-image{
         border-radius: 100%;
         position: relative;
+        padding: 1px;
         img{
           transform: none !important;
         }
@@ -524,6 +525,25 @@ main{
 }
 
 /*** PAGE_ARCHIVE & SINGLE ***/
+.single-event{
+  .single-content{
+    >div:nth-child(1){
+      display: none;
+    }
+    p:nth-child(1),
+    p:nth-child(2),
+    p:nth-child(3),
+    p:nth-child(5){
+      display: none;
+    }
+    br{
+      display: none;
+    }
+    .event-categories{
+      display: none;
+    }
+  }
+}
 .archive,
 .single{
   .post{
