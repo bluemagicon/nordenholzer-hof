@@ -857,3 +857,6 @@ main{
 .current-menu-parent > a{
   color: $w-color-primary !important;
 }
+.single-post .single-content p:first-child{
+  margin-top: 0 !important;
+}
