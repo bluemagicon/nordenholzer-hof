@@ -860,3 +860,8 @@ main{
 .single-post .single-content p:first-child{
   margin-top: 0 !important;
 }
+@media(max-width: 768px){
+  .uk-modal-container .uk-modal-body .modal-inner{
+    padding: 2rem;
+  }
+}
