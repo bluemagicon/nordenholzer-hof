@@ -50,7 +50,11 @@
                 <span class="has-text-align-center is-style-subheadline has-primary-color has-text-color"><?= get_the_terms(get_the_id(), 'event-categories')[0]->name; ?></span>
                 <h1 class="has-text-align-center"><?= get_the_title(); ?></h1>
                 <strong class="date"><?= $startDate ?><?php if($startDate != $endDate){ ?> - <?= $endDate ?><?php } ?></strong><br />
-                <span class="time"><?= $newTime ?> Uhr - <?= $newTime_end ?> Uhr</span>
+                <?php if(get_field('uhrzeit_uberschreiben') != ""){ ?>
+                    <span class="time"><?= $newTime ?> Uhr - <?= $newTime_end ?> Uhr</span>
+                <?php }else{ ?>
+                    <span class="time"><?= get_field('uhrzeit_uberschreiben'); ?></span>
+                <?php } ?>
             </div>
         </div>
     </header>
