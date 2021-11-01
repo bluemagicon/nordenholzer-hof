@@ -51,9 +51,9 @@
                 <h1 class="has-text-align-center"><?= get_the_title(); ?></h1>
                 <strong class="date"><?= $startDate ?><?php if($startDate != $endDate){ ?> - <?= $endDate ?><?php } ?></strong><br />
                 <?php if(get_field('uhrzeit_uberschreiben') != ""){ ?>
-                    <span class="time"><?= $newTime ?> Uhr - <?= $newTime_end ?> Uhr</span>
-                <?php }else{ ?>
                     <span class="time"><?= get_field('uhrzeit_uberschreiben'); ?></span>
+                <?php }else{ ?>
+                    <span class="time"><?= $newTime ?> Uhr - <?= $newTime_end ?> Uhr</span>
                 <?php } ?>
             </div>
         </div>
