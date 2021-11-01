@@ -53,7 +53,7 @@ include 'post/load-vars.php';
 
 		<div class="post-content">
             <div class="events-excerpt">
-                <span class="is-style-subheadline has-primary-color has-text-color"><?= get_the_terms(get_the_id(), 'event-categories')[0]->name; ?></span>
+                <!--<span class="is-style-subheadline has-primary-color has-text-color"><?= get_the_terms(get_the_id(), 'event-categories')[0]->name; ?></span>-->
                 <h3 class="post-title"><?php echo get_the_title(); ?></h3>
                 <strong class="date"><?= $startDate ?><?php if($startDate != $endDate){ ?> - <?= $endDate ?><?php } ?></strong>
                 <?php if(get_field('uhrzeit_uberschreiben', get_the_ID()) != ""){ ?>

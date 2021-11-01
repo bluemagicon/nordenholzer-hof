@@ -47,7 +47,7 @@
     <header class="single-header">
         <div class="alignwide">
             <div class="single-header-inner">
-                <span class="has-text-align-center is-style-subheadline has-primary-color has-text-color"><?= get_the_terms(get_the_id(), 'event-categories')[0]->name; ?></span>
+                <!--<span class="has-text-align-center is-style-subheadline has-primary-color has-text-color"><?= get_the_terms(get_the_id(), 'event-categories')[0]->name; ?></span>-->
                 <h1 class="has-text-align-center"><?= get_the_title(); ?></h1>
                 <strong class="date"><?= $startDate ?><?php if($startDate != $endDate){ ?> - <?= $endDate ?><?php } ?></strong><br />
                 <?php if(get_field('uhrzeit_uberschreiben') != ""){ ?>
