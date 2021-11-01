@@ -57,9 +57,9 @@ include 'post/load-vars.php';
                 <h3 class="post-title"><?php echo get_the_title(); ?></h3>
                 <strong class="date"><?= $startDate ?><?php if($startDate != $endDate){ ?> - <?= $endDate ?><?php } ?></strong>
                 <?php if(get_field('uhrzeit_uberschreiben') != ""){ ?>
-                    <span class="time"><?= $newTime ?> Uhr - <?= $newTime_end ?> Uhr</span>
-                <?php }else{ ?>
                     <span class="time"><?= get_field('uhrzeit_uberschreiben'); ?></span>
+                <?php }else{ ?>
+                    <span class="time"><?= $newTime ?> Uhr - <?= $newTime_end ?> Uhr</span>
                 <?php } ?>
             </div>
 		</div>
