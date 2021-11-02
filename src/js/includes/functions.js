@@ -50,6 +50,10 @@ jQuery(document).ready(function () {
 
 
     //MODAL
+    if (!sessionStorage.getItem('shown-modal')){
+        UIkit.modal('#modal-info').show();
+        sessionStorage.setItem('shown-modal', 'true');
+    }
     jQuery('.open-dyn-modal').click(function() {
         var title = decodeURIComponent(jQuery(this).data('title').replace(/\+/g, ' '));
         var subtitle = jQuery(this).data('subtitle');
