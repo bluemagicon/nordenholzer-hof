@@ -125,7 +125,9 @@
                                 <div class="block uk-width-1-2@m">
                                     <div class="block-inner">
                                         <h4><?= get_sub_field('ueberschrift'); ?></h4>
-                                        <a class="button" href="<?= get_sub_field('button')['url']; ?>" target="<?= get_sub_field('button')['target']; ?>"><?= get_sub_field('button')['title']; ?></a>
+                                        <?php while(have_rows('buttons')) : the_row(); ?>
+                                            <a class="button" href="<?= get_sub_field('button')['url']; ?>" target="<?= get_sub_field('button')['target']; ?>"><?= get_sub_field('button')['title']; ?></a>
+                                        <?php endwhile; ?>
                                     </div>
                                 </div>
                             <?php endwhile; ?>
