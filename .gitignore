@@ -55,3 +55,4 @@ sftp-config.json
 ftpconfig.json
 /src/scss/_wray-framework
 package-lock.json
+.idea/workspace.xml
